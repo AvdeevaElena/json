@@ -1,0 +1,137 @@
+[{
+    "year": 2018,
+    "best_picture": {
+        "url": "https://unityinmarin.org/wp-content/uploads/formidable/6/91zVdTOnQFL._RI_-1.jpg",
+        "title": "The Shape of Water",
+        "producer": "J. Miles Dale",
+        "info": "At a top secret research facility in the 1960s, a lonely janitor forms a unique relationship with an amphibious creature that is being held in captivity."
+    },
+    "best_picture_animated": {
+        "url": "https://avatars.mds.yandex.net/get-zen_doc/1889358/pub_5d65214e97b5d400ae6ca2d1_5d652d79c49f2900ad3a1fee/scale_1200",
+        "title": "Coco",
+        "producer": "Lee Unkrich and Darla K. Anderson",
+        "info": ""
+    },
+    "best_actor": {
+        "url": "https://www.saga.co.uk/contentlibrary/saga/publishing/verticals/entertainment/films-and-tv/films/2018/darkesthour1768x576.jpg",
+        "name": "Gary Oldman",
+        "movie": "Darkest Hour"
+    },
+    "best_actress": {
+        "url": "https://ortakoltuk.com/wp-content/uploads/2017/12/25-Three-Billboards-Outside-Ebbing-Missouri.jpg",
+        "name": "Frances McDormand",
+        "movie": "Three Billboards outside Ebbing, Missouri"
+    },
+    "best_support_actor": {
+        "url": "https://www.timeout.ru/img/%D0%9C%D0%B0%D1%80%D0%B8%D0%BD%D0%B0/%D0%9A%D0%B8%D0%BD%D0%BE/%D0%9E%D1%81%D0%BA%D0%B0%D1%80/%D0%A1%D1%8D%D0%BC.png",
+        "name": "Sam Rockwell",
+        "movie": "Three Billboards outside Ebbing, Missouri"
+    },
+    "best_support_actress": {
+        "url": "https://www.thesun.co.uk/wp-content/uploads/2018/02/nintchdbpict000385463128.jpg",
+        "name": "Allison Janney",
+        "movie": "I, Tonya"
+    },
+    "costume_design": {
+        "url": "https://images-na.ssl-images-amazon.com/images/I/712l-rtG%2B5L._AC_SY445_.jpg",
+        "name": "Mark Bridges",
+        "movie": "Phantom Thread"
+    },
+    "cinematography": {
+        "url": "https://cdn1.ozone.ru/multimedia/1021640407.jpg",
+        "name": "Roger A. Deakins ",
+        "movie": "Blade Runner 2049"
+    }
+
+},
+{
+    "year": 2019,
+    "best_picture": {
+        "url": "https://a.radikal.ru/a15/1901/08/75a32b057caf.jpg",
+        "title": "Green Book",
+        "producer": "Jim Burke, Charles B. Wessler, Brian Currie, Peter Farrelly and Nick Vallelonga",
+        "info": "A working-class Italian-American bouncer becomes the driver of an African-American classical pianist on a tour of venues through the 1960s American South."
+    },
+    "best_picture_animated": {
+        "url": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+        "title": "Spider-Man: Into the Spider-Verse",
+        "producer": "Bob Persichetti, Peter Ramsey, Rodney Rothman, Phil Lord and Christopher Miller",
+        "info": "Teen Miles Morales becomes Spider-Man of his reality, crossing his path with five counterparts from other dimensions to stop a threat for all realities."
+    },
+    "best_actor": {
+        "url": "https://th.thgim.com/entertainment/reviews/1sxbbw/article25524743.ece/alternates/FREE_435/Bohemian-Rhapsody",
+        "name": "Rami Malek",
+        "movie": "Bohemian Rhapsody"
+    },
+    "best_actress": {
+        "url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/olivia-colman-the-favorite-1551722436.jpg?crop=0.587xw:0.880xh;0.177xw,0.120xh&resize=480:*",
+        "name": "Olivia Colman",
+        "movie": "The Favourite"
+    },
+    "best_support_actor": {
+        "url": "https://s.yimg.com/uu/api/res/1.2/GptnXfu2kSqIM_2PYB2n1g--~B/aD0xMzMzO3c9MjAwMDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en-US/indiewire_268/d17a1c8cd2966f78580aeaeb127d038e",
+        "name": "Mahershala Ali",
+        "movie": "Green Book"
+    },
+    "best_support_actress": {
+        "url": "https://bloximages.chicago2.vip.townnews.com/wcfcourier.com/content/tncms/assets/v3/editorial/8/5a/85a81d40-e218-57d7-8de7-56e8a54c9e2f/5c35d216d9128.image.jpg?resize=1200%2C800",
+        "name": "Regina King",
+        "movie": "If Beale Street Could Talk"
+    },
+    "costume_design": {
+        "url": "https://i.pinimg.com/originals/1a/0b/bd/1a0bbdfdc442c15768ace79ef52b1939.jpg",
+        "name": "Ruth Carter",
+        "movie": "Black Panther"
+    },
+    "cinematography": {
+        "url": "https://media.kg-portal.ru/movies/r/roma/posters/roma_1.jpg",
+        "name": "Alfonso Cuarón",
+        "movie": "Roma"
+    }
+},
+{
+    "year": 2020,
+    "best_picture": {
+        "url": "https://www.dramamilk.com/wp-content/uploads/2019/10/Korean-Parasite-movie-poster-2-1.jpg",
+        "title": "Parasite",
+        "producer": "Kwak Sin Ae and Bong Joon Ho",
+        "info": "Greed, class discrimination and a mysterious interloper threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan."
+    },
+    "best_picture_animated": {
+        "url": "https://drraa3ej68s2c.cloudfront.net/wp-content/uploads/2020/01/06114437/bd61fdeac25c8f2751d746b92bd5aa8b89eb09681ba9b1fa0babab6c19bbafc3-1024x1024.jpg",
+        "title": "Toy Story 4",
+        "producer": "Josh Cooley, Mark Nielsen and Jonas Rivera",
+        "info": "Woody and the gang go on a road trip with new toy Forky, who’s convinced he’s trash and doesn’t yet understand his role in the world. Along the way, Woody is unexpectedly reunited with independent spirit Bo Peep and finds himself faced with a decision, and a future, he never imagined."
+    },
+    "best_actor": {
+        "url": "https://i.pinimg.com/564x/c4/d2/d7/c4d2d7cd2f646ec00aa96724b7ad9d87.jpg",
+        "name": "Joaquin Phoenix",
+        "movie": "Joker"
+    },
+    "best_actress": {
+        "url": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AAJ6Rmr.img?h=0&w=720&m=6&q=60&u=t&o=f&l=f&x=335&y=341",
+        "name": "Renée Zellweger",
+        "movie": "Jude"
+    },
+    "best_support_actor": {
+        "url": "https://avatars.mds.yandex.net/get-zen_doc/128694/pub_5c4b23c9f6778500aeceb056_5c4b25196e808000ada97a4b/scale_1200",
+        "name": "Brad Pitt",
+        "movie": "Once upon a Time...in Hollywood"
+    },
+    "best_support_actress": {
+        "url": "https://img.cinemablend.com/quill/f/6/4/8/9/e/f6489e448319cb34961c0c86152ea94215718731.jpg",
+        "name": "Laura Dern",
+        "movie": "Marriage Story"
+    },
+    "costume_design": {
+        "url": "https://www.startfilm.ru/images/base/film/f_666788/big_startfilmru1395801.jpg",
+        "name": "Jacqueline Durran",
+        "movie": "Little Women"
+    },
+    "cinematography": {
+        "url": "https://images-na.ssl-images-amazon.com/images/I/414iJRZ-O%2BL._AC_.jpg",
+        "name": "Roger Deakins",
+        "movie": "1917"
+    }
+}
+]
