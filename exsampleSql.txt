@@ -1,0 +1,243 @@
+    private final  static String Create_TMP_Table = "create temporary table temp1\r\n" + 
+   		"\r\n" + 
+   		"SELECT\r\n" + 
+   		"\r\n" + 
+   		"                TIME AS STARTUP_TIME,\r\n" + 
+   		"\r\n" + 
+   		"                max(time) as end_time,\r\n" + 
+   		"\r\n" + 
+   		"                PROGRAM_NUMBER,\r\n" + 
+   		"\r\n" + 
+   		"                avg(gp_n2_pv) as n2,\r\n" + 
+   		"\r\n" + 
+   		"                round(avg(waterflow)*hour(timediff(max(time),min(time))),2) as waterQuant,\r\n" + 
+   		"\r\n" + 
+   		"round((avg(current_l1)*avg(voltage_l1)+avg(current_l2)*avg(voltage_l2)+avg(current_l3)*avg(voltage_l3))/1000*hour(timediff(max(time),min(time))),2) as powerVAh,\r\n" + 
+   		"\r\n" + 
+   		"round((avg(current_l1)*avg(voltage_l1)+avg(current_l2)*avg(voltage_l2)+avg(current_l3)*avg(voltage_l3))/1000*0.6*hour(timediff(max(time),min(time))),2) as powerkWh,\r\n" + 
+   		"\r\n" + 
+   		"                concat('',timediff(max(time),min(time))) as duration,\r\n" + 
+   		"\r\n" + 
+   		"          concat('',timediff(min(time),ifnull((select max(time) from KILN_WORK_FINAL_LAST3 where program_number=mt1.program_number-1 and  TIMESTAMPDIFF(MONTH, date(TIME),  NOW()  )< 2  ),min(time)))) as pause,"
+   		+ " ifnull(TIMESTAMPDIFF(SECOND,(Select max(time) from KILN_WORK_FINAL_LAST3 where program_number=mt1.program_number and   TIMESTAMPDIFF(MONTH, date(TIME),  NOW()  )< 2 ), now()),0)  as currentWork \r\n" + 
+   		"\r\n" + 
+   		"FROM\r\n" + 
+   		"\r\n" + 
+   		"                KILN_WORK_FINAL_LAST3 mt1\r\n" + 
+   		"\r\n" + 
+   		"WHERE\r\n" + 
+   		"\r\n" + 
+   		"                 TIMESTAMPDIFF(MONTH, date(TIME),  NOW()  )< 2  \r\n" + 
+   		"and  PROGRAM_NUMBER <> 0    \r\n" +
+   		"GROUP BY\r\n" + 
+   		"\r\n" + 
+   		"                PROGRAM_NUMBER \r\n" + 
+   		"\r\n" + 
+   		"ORDER BY\r\n" + 
+   		"\r\n" + 
+   		"                TIME;";
+   
+   
+    private final  static String Select_TMP_Table = "SELECT  \r\n" + 
+       		"                STARTUP_TIME,\r\n" + 
+       		"                PROGRAM_NUMBER,\r\n" + 
+       		"                pause,\r\n" + 
+       		"                n2,\r\n" + 
+       		"                end_time,\r\n" + 
+       		"                PROGRAMS_HEAT.PROGRAM_NAME,\r\n" + 
+       		"                max(PROGRAMS_HEAT.step_NO) as heat_st,\r\n" + 
+       		"                waterQuant,\r\n" + 
+       		"                powerVAh,\r\n" + 
+       		"                powerkWh,\r\n" + 
+       		"                duration,\r\n" + 
+       		"                max(PROGRAMS_gas.step_no) as gas_st, currentWork \r\n" + 
+       		"FROM\r\n" + 
+       		"                temp1\r\n" + 
+       		"LEFT JOIN\r\n" + 
+       		"                PROGRAMS_HEAT\r\n" + 
+       		"USING\r\n" + 
+       		"                (PROGRAM_NUMBER)\r\n" + 
+       		"LEFT JOIN\r\n" + 
+       		"                PROGRAMS_GAS\r\n" + 
+       		"USING\r\n" + 
+       		"                (PROGRAM_NUMBER)\r\n" + 
+       		"WHERE\r\n" + 
+       		"     TIMESTAMPDIFF(MONTH, date(PROGRAMS_HEAT.inserted),  NOW()  )< 2   \r\n" + 
+       		"    and  TIMESTAMPDIFF(MONTH, date(PROGRAMS_gas.inserted),  NOW()  )< 2  \r\n" + 
+       		"GROUP BY\r\n" + 
+       		"                PROGRAM_NUMBER\r\n" + 
+       		"ORDER BY\r\n" + 
+       		"                STARTUP_TIME;\r\n";
+
+
+ private final  static String Create_TMP_Table_Raisa2 =" Create temporary table temp1 SELECT\r\n" + 
+   		"   		   		   		                TIME1 AS STARTUP_TIME,\r\n" + 
+   		"   		   		  		                max(TIME1) as end_time, \r\n" + 
+   		"   		   		  		                PROGRAM_NUMBER, \r\n" + 
+   		"   		   		  		                avg(gp_n2_pv) as n2,\r\n" + 
+   		"   		   		   		               round(avg(WaterFlow)*(TIMESTAMPDIFF(hour, min(TIME1),max(TIME1))),2) as waterQuant, \r\n" + 
+   		"   		   		   		               round((avg(Current_L1)*avg(VOLTAGE_L1)+avg(Current_L2)*avg(VOLTAGE_L2)+avg(Current_L3)*avg(VOLTAGE_L3))/1000*(TIMESTAMPDIFF(hour,min(TIME1),max(TIME1))),2) as powerVAh, \r\n" + 
+   		"   		   		     	round((avg(current_l1)*avg(voltage_l1)+avg(current_l2)*avg(voltage_l2)+avg(current_l3)*avg(voltage_l3))/1000*0.6*(TIMESTAMPDIFF(hour,min(TIME1),max(TIME1))),2) as powerkWh    		         \r\n" + 
+   		"   		   		   		FROM raisa_2 mt1 WHERE   TIMESTAMPDIFF(MONTH, date(TIME1),  NOW()  )< 2  GROUP BY PROGRAM_NUMBER ORDER BY TIME1;"; 
+   
+   
+   
+   private final  static String Select_TMP_Table_Raisa2 ="SELECT                          STARTUP_TIME,\r\n" + 
+   		"   		  		   		                PROGRAM_NUMBER,  \r\n" + 
+   		"   		   		  		                n2,\r\n" + 
+   		"   		   		  		                end_time,\r\n" + 
+   		"   		   		   		                waterQuant, \r\n" + 
+   		"   		   		   		                powerVAh, \r\n" + 
+   		"   		   		   		                powerkWh,\r\n" + 
+   		"   		   		   		                PROGRAMS_HEAT_RAISA_2.PROGRAM_NAME,\r\n" + 
+   		"   		   		                        max(PROGRAMS_HEAT_RAISA_2.step_NO) as heat_st,\r\n" + 
+   		"   		                                   max(PROGRAMS_gas_RAISA_2.step_no) as gas_st\r\n" + 
+   		"   						FROM    temp1 LEFT JOIN\r\n" + 
+   		"   		   		               PROGRAMS_HEAT_RAISA_2\r\n" + 
+   		"   		  		USING  (PROGRAM_NUMBER)\r\n" + 
+   		"   		   		LEFT JOIN\r\n" + 
+   		"   		   		                PROGRAMS_GAS_RAISA_2\r\n" + 
+   		"   		   		USING  (PROGRAM_NUMBER) \r\n" + 
+   		"   		   		WHERE \r\n" + 
+   		"   		   		 TIMESTAMPDIFF(MONTH, date(PROGRAMS_HEAT_RAISA_2.inserted),  NOW()  )< 2 \r\n" + 
+   		"   		   		 and  TIMESTAMPDIFF(MONTH, date(PROGRAMS_gas_RAISA_2.inserted),  NOW()  )< 2 \r\n" + 
+   		"   		   		\r\n" + 
+   		"   		   		GROUP BY PROGRAM_NUMBER\r\n" + 
+   		"   		   		ORDER BY STARTUP_TIME; ";
+   
+
+
+
+Задача:создать процедуру, которая находит все пути между двумя городами. Имена  городов – параметры процедуры.
+1	Moscow	2	Kazan	2
+1	Moscow	3	Tula	4
+1	Moscow	4	Sochi	7
+1	Moscow	6	Omsk	5
+2	Kazan	4	Sochi	6
+2	Kazan	7	Vologda	8
+2	Kazan	5	Pskov	3
+3	Tula	6	Omsk	6
+4	Sochi	6	Omsk	1
+4	Sochi	7	Vologda	6
+5	Pskov	7	Vologda	7
+6	Omsk	7	Vologda	6
+
+
+Первоначально написала на SQL 
+    
+    WITH stepbystep (acity, bcity, way, dist ) AS (
+SELECT acity, bcity, acity || '-' || bcity AS way, dist
+FROM paths
+WHERE 
+acity = 'Moscow'
+START WITH acity = 'Moscow'
+CONNECT BY acity = PRIOR bcity
+AND PRIOR bcity = 'Sochi'
+UNION ALL
+SELECT r.acity, r.bcity
+, s.way || '-' || r.bcity
+, r.dist + s.dist
+FROM paths r 
+INNER JOIN
+stepbystep s
+ON ( s.bcity = r.acity ) 
+WHERE r.bcity='Sochi'
+)
+SELECT acity,bcity, way, dist FROM stepbystep
+WHERE bcity = 'Sochi';
+/
+
+CREATE OR REPLACE PROCEDURE GET_PATH(start_name in VARCHAR2, end_name in VARCHAR2, v_wayq in VARCHAR2 , v_dist in Number,
+pp IN OUT NUMBER)
+is
+--v_wayq VARCHAR2; параметр, кот. отслеживает "предпоследний" город в маршруте. Первоначально совпадает с пунктом отправления
+--v_dist in Number через нее идет накопление и передача сумм предыдущих расстояний
+--pp IN OUT NUMBER копит количество заходов (как итог маршрутов), если путь найден
+v_cur_dist number(3); -- сумма "веса" текущего расстояния с предыдущими
+begin
+FOR rec_1 IN (  
+             SELECT  *
+               FROM  paths
+             WHERE bcity = start_name   
+           ) loop
+IF (INSTR(v_wayq, rec_1.acity) != 0) THEN  
+NULL;
+ELSIF (rec_1.acity = end_name) THEN  
+v_cur_dist :=rec_1.dist+v_dist; 
+pp := pp+1; 
+dbms_output.put_line( v_wayq ||'-' || rec_1.acity ||' '|| v_cur_dist ); 
+ELSE
+v_cur_dist :=rec_1.dist+v_dist;
+get_path(rec_1.acity,end_name, v_wayq||'-'||rec_1.acity, v_cur_dist,pp); 
+END IF;
+END LOOP;
+FOR rec IN (SELECT * FROM paths WHERE acity = start_name) --записью на каждой интеграции происходит выбор возможных путей из точки А (A->B, A->C)  
+loop
+IF (INSTR(v_wayq, rec.bcity) != 0) THEN  -- символьное сравнение строк, 
+NULL;-- null если одинаковые,  перебор заверщается(A->A), (B->B)
+ELSIF (rec.bcity = end_name) THEN  -- если путь найден  ( (А->Б)=Б)
+v_cur_dist :=rec.dist+v_dist; -- подсчет текущего расстояния (новое + ------переброшенные предыдущие)
+pp := pp+1; --счет кол-ва путей
+dbms_output.put_line( v_wayq ||'-' || rec.bcity ||' '|| v_cur_dist ); 
+ELSE
+v_cur_dist :=rec.dist+v_dist;
+get_path(rec.bcity,end_name, v_wayq||'-'||rec.bcity, v_cur_dist,pp); -- далее поиск продолжается, рекрусивно, но уже 
+--передаются "другие" остановки (путем отправления становится "пересадка",end_name(без из-ний), крайний найденный путь, вес расстояния, счет п.)
+END IF;
+END LOOP;
+
+END GET_PATH;
+
+CREATE OR REPLACE PROCEDURE PathSearchNow(start_name VARCHAR2, end_name VARCHAR2)IS
+
+v_n number :=0; -- через нее идет накопление и передача сумм предыдущих расстояний
+pp number :=0; --  копит количество заходов (как итог маршрутов), если путь найден, 
+BEGIN
+GET_PATH (start_name , end_name , start_name, v_n, pp); -- вызов GET_PATH 
+
+  dbms_output.put_line ('ВСЕГО ПУТЕЙ :  '||pp);
+ END;
+  /
+
+
+
+8. Создать процедуру, которая будет удалять из таблицы все дублирующиеся строки. Имя таблицы и схема - параметры. Задачу решить двумя способами: 
+1. Средствами языка SQL (с использованием только базового варианта команды Select (без разделов With, UNION, START WITH, CONNECT by, подзапросов и пр.)  и 
+2.При помощи пакета DBMS_SQL.
+Сравнить эффективность программ.
+
+Create or replace procedure delete_dublic( t_table_name  varchar2) is
+     cur_dbms integer;
+     v_row_colums varchar2(1000);
+     v_dublic_out int;
+     v_gr_by varchar2(1000);
+     v_rows varchar2(1000);
+     z_o integer;
+    begin
+    v_gr_by := q'[SELECT listagg(column_name, ', ') WITHIN GROUP (ORDER BY column_name) FROM
+                  user_tab_columns WHERE TABLE_NAME =']'||t_table_name|| q'[']'; -- так как таблица может быть  любая, нужно сформировать значение и кол-во ее столбцов 
+                                                                                -- в подстановочную переменную далее  (формирование group by )  
+  -- dbms_output.put_line(v_gr_by); -- check 
+    cur_dbms:=dbms_sql.open_cursor;  --open
+   dbms_sql.parse(cur_dbms, v_gr_by, dbms_sql.native); -- обработка и анализ получаемых данных
+    dbms_sql.define_column(cur_dbms,1,v_row_colums,1000); -- !!!определение типов данных столбцов 
+    z_o:=DBMS_SQL.EXECUTE_and_fetch(cur_dbms);  -- !!! извлечение первого поля из курсора
+   DBMS_SQL.COLUMN_VALUE(cur_dbms,1,v_row_colums); --!!! и получение его значения
+     v_rows :=                                    -- и вот дпя чего 
+        'delete '||t_table_name||' where rowid NOT in
+          (select min(rowid) from '||t_table_name||' group by '|| v_row_colums||' )'; --через первичный ключ удаляем двойные ряды перед 
+          --1rowid,  основанные на содержание значений в колонках v_row_colums
+          
+  --  dbms_output.put_line(v_rows);---- check 
+     dbms_sql.parse(cur_dbms, v_rows, dbms_sql.native);
+    v_dublic_out:=dbms_sql.execute(cur_dbms); --выполнение
+   -- dbms_output.put_line('delete '||v_dublic_out);---- check 
+   dbms_sql.close_cursor(cur_dbms); 
+  exception
+    when others then
+     if dbms_sql.is_open(cur_dbms) then -- для отслеживания и отладки, что возникли errors
+         dbms_sql.close_cursor(cur_dbms);
+    end if;
+  raise; 
+   end ;
+  /
