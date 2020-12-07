@@ -1,20 +1,32 @@
-{
-      "orderID": 12345,
-      "shopperName": "Ваня Иванов",
-      "shopperEmail": "ivanov@example.com",
-      "contents": [
-        {
-          "productID": 34,
-          "productName": "Супер товар",
-          "quantity": 1
-        },
-        {
-          "productID": 56,
-          "productName": "Чудо товар",
-          "quantity": 3
-        }
-      ],
-      "orderCompleted": true,
-      "year": [0,2,4,6]
-    }
-    
+[
+    {
+        "id": "1",
+         "name1": "Иванов",
+		 "date1": "2012",
+	     "name2": "Петров",
+		 "date2": "2012",
+      },
+	  	 
+	 {
+        "id": "2",
+         "name1": "Иванов",
+		 "date1": "2012",
+	     "name2": "Петров",
+		 "date2": "2012",
+      },
+	  	   
+	 {
+        "id": "3",
+         "name1": "Иванов",
+		 "date1": "2012",
+	     "name2": "Петров",
+		 "date2": "2012",
+      }
+	  	   	 
+	  	 
+	  
+	  
+ ]	  
+ 
+ 
+ 
