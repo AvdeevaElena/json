@@ -10,7 +10,9 @@
 		"executor": "Сидоров",
 		"datedone": "1970-01-01 00:00:00",
 		"status": "В работе",
-		"color": "red"
+		"color": "red", 
+		"corpus": "left"
+		
      },
 	   {
         "id": "2",
@@ -23,7 +25,8 @@
 		"executor": "Сидоров",
 		"datedone": "1970-01-01 00:00:00",
 		"status": "Взята в работу",
-		"color": "yellow"
+		"color": "yellow",
+		"corpus": "right"
      },
 	    {
         "id": "3",
@@ -36,7 +39,8 @@
 		"executor": "Сидоров",
 		"datedone": "1970-01-01 00:00:00",
 		"status": "Назначена",
-		"color": "green"
+		"color": "green",
+		"corpus": "left"
      }
 	  	
  ]	  
