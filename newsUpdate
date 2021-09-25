@@ -1,23 +1,24 @@
 [
     {
-    "createDate": 12.12.2016,
-    "creatorId": 1,
-    "description": Описание новости,
-    "id": 1,
-    "newsCategoryId": 1,
-    "publishDate": 12.12.2016,
-    "publishEnabled": true,
-    "title": Заголовок 1
+    "createDate": "12.12.2016",
+    "creatorId": "1",
+    "description": "Описание новости",
+    "id": "1",
+    "newsCategoryId": "1",
+    "publishDate": "12.12.2016",
+    "publishEnabled": "true",
+    "title": "Заголовок 1"
   },
+  
   {
-    "createDate": 12.12.2016,
-    "creatorId": 2,
-    "description": Описание новости2,
-    "id": 2,
-    "newsCategoryId": 2,
-    "publishDate": 12.12.2016,
-    "publishEnabled": true,
-    "title": Заголовок 2
+    "createDate": "12.12.2016",
+    "creatorId": "2",
+    "description": "Описание новости2",
+    "id": "2",
+    "newsCategoryId": "1",
+    "publishDate": "12.12.2016",
+    "publishEnabled": "true",
+    "title": "Заголовок 2"
   }
   
   
