@@ -1,12 +1,156 @@
 [
-    {
-    "createDate": "12.12.12",
-    "creatorId": "1",
-    "description": "У этой книги совсем иная задача. Она поможет вам научиться не только разговаривать, но и размышлять по-русск.Книга, которую вы держите в руках, составлена из афоризмов и размышлений великих мыслителей, писателей, поэтов,философов и общественных деятелей различных эпох. Их мысли - о тех вопросах, которые не перестают волновать человечество.",
-    "id": "1",
-    "newsCategoryId": "1",
-    "publishDate": "12.12.12",
-    "publishEnabled": "true",
-    "title": "Заголовок 1"
+  {
+    "id": 75,
+    "newsCategoryId": 3,
+    "title": "Зарплата",
+    "description": "скоро зп",
+    "creatorId": 1,
+    "createDate": 1636115304,
+    "publishDate": 1638004500,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 66,
+    "newsCategoryId": 4,
+    "title": "Профсоюз",
+    "description": "привет!!!",
+    "creatorId": 1,
+    "createDate": 1635782981,
+    "publishDate": 1637908200,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 74,
+    "newsCategoryId": 7,
+    "title": "Благодарность разработчикам Андроид",
+    "description": "Спасибо за исправленный баг🙂",
+    "creatorId": 1,
+    "createDate": 1635972295,
+    "publishDate": 1636005600,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 73,
+    "newsCategoryId": 7,
+    "title": "Благодарность",
+    "description": "благодарим за помощь!",
+    "creatorId": 1,
+    "createDate": 1635972072,
+    "publishDate": 1635972300,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 72,
+    "newsCategoryId": 6,
+    "title": "Массаж",
+    "description": "кому массажик?",
+    "creatorId": 1,
+    "createDate": 1635959350,
+    "publishDate": 1635959640,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 46,
+    "newsCategoryId": 1,
+    "title": "Продам жигули",
+    "description": "Продам жигули, состояние новых. или не очень",
+    "creatorId": 1,
+    "createDate": 1635001925,
+    "publishDate": 1635081000,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 42,
+    "newsCategoryId": 7,
+    "title": "Благодарность",
+    "description": "всем спасибо!",
+    "creatorId": 1,
+    "createDate": 1634750113,
+    "publishDate": 1634800800,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 40,
+    "newsCategoryId": 5,
+    "title": "Праздник",
+    "description": "гот",
+    "creatorId": 1,
+    "createDate": 1634459442,
+    "publishDate": 1634459400,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 39,
+    "newsCategoryId": 1,
+    "title": "Объявление",
+    "description": "г",
+    "creatorId": 1,
+    "createDate": 1634459410,
+    "publishDate": 1634459340,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 22,
+    "newsCategoryId": 2,
+    "title": "День рождения",
+    "description": "ДР",
+    "creatorId": 1,
+    "createDate": 1634202067,
+    "publishDate": 1634202000,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 38,
+    "newsCategoryId": 8,
+    "title": "Нужна помощь",
+    "description": "мгод",
+    "creatorId": 1,
+    "createDate": 1634459012,
+    "publishDate": 1634174580,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 35,
+    "newsCategoryId": 4,
+    "title": "Профсоюз",
+    "description": "йуха \nрелиз",
+    "creatorId": 1,
+    "createDate": 1634400755,
+    "publishDate": 1634080320,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 41,
+    "newsCategoryId": 1,
+    "title": "Объявление",
+    "description": "Тест",
+    "creatorId": 1,
+    "createDate": 1634459652,
+    "publishDate": 1634050800,
+    "publishEnabled": true,
+    "creatorName": "user1-lastname user1-firstname user1-middlename"
+  },
+  {
+    "id": 2,
+    "newsCategoryId": 3,
+    "title": "Зарплата будет выдаваться 11.10 с 12:00 до 15:00",
+    "description": "Кто успел - того и зарплата",
+    "creatorId": 3,
+    "createDate": 1633870144,
+    "publishDate": 1633890144,
+    "publishEnabled": true,
+    "creatorName": "user3-lastname user3-firstname user3-middlename"
   }
 ]
